@@ -1,0 +1,372 @@
+/* ==========================================================================
+   Design Variables (Default: Dark Theme)
+   ==========================================================================
+*/
+
+:root,
+[data-theme="dark"] {
+
+  --clr-toggle-icon: #FFCC00;
+  /* sun for toggle sun icon */
+  --toggle-btn-bg: #000000;
+  /* toggle btn background  */
+  --clr-bg-body: #141d2f;
+  /* Deep space blue background */
+  --clr-bg-card: #1e2a47;
+  /* Dark slate card background */
+  --clr-text-primary: #ffffff;
+  /* Pure white headings */
+  --clr-text-secondary: #90a4ae;
+  /* Light grey description text */
+  --clr-text-muted: #697c9a;
+  /* Steel blue for disabled links */
+  --clr-accent: #0079ff;
+  /* Bright electric blue buttons */
+  --clr-accent-hover: #60abff;
+  /* Lighter blue button hover */
+  --clr-error: #f74f4f;
+  /* Tomato red for error labels */
+
+  /* Stats Box Background (slightly darker than card background) */
+  --clr-bg-stats: #141d2f;
+
+  /* Typography */
+  --ff-main: 'Space Mono', monospace;
+  --fs-body: 15px;
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* Layout Constants */
+  --br-card: 15px;
+
+  /* 15px rounded corners for cards */
+  --transition-theme: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==== Dynamic Light ==== */
+[data-theme="light"] {
+  /* Colors */
+  --clr-toggle-icon: #141d2f;
+  /* for toggle icon moon */
+  --toggle-btn-bg: var(--clr-accent);
+  /* toggle btn background  */
+  --clr-bg-body: #f6f8ff;
+  /* Ice white background */
+  --clr-bg-card: #fefefe;
+  /* Pure white card background */
+  --clr-text-primary: #2b3442;
+  /* Dark charcoal headings */
+  --clr-text-secondary: #4b6a9b;
+  /* Navy blue description text */
+  --clr-text-muted: #697c9a;
+  /* Steel blue */
+  --clr-accent: #0079ff;
+  /* Bright electric blue */
+  --clr-accent-hover: #222731;
+  /* Near black for light theme button hover */
+
+  /* Stats Box Background in Light Mode (light grey panel) */
+  --clr-bg-stats: #f6f8ff;
+}
+
+
+/* ==========================================================================
+   Global Css Reset
+   ==========================================================================
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+header,
+main,
+footer,
+section,
+h1,
+h2,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  min-block-size: 100dvh;
+  display: grid;
+  place-items: center;
+
+  font-family: var(--ff-main);
+  background-color: var(--clr-bg-body);
+  color: var(--clr-text-primary);
+}
+
+
+/* ==========================================================================
+   Mobile First Styling
+   ==========================================================================
+*/
+
+/* ==== Layout Setting ==== */
+.dashboard-wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+
+  inline-size: 100%;
+  max-inline-size: 375px;
+  padding-inline: 1rem;
+}
+
+/* ==== Header ==== */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 0.8rem;
+}
+
+.dashboard-logo {
+  font-size: 1.6rem;
+  font-weight: var(--fw-bold);
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+
+}
+
+.theme-toggle-btn:hover {
+  color: var(--clr-text-secondary);
+}
+
+#theme-btn-icon {
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  color: var(--clr-toggle-icon);
+
+  background-color: var(--toggle-btn-bg);
+  border-radius: 50%;
+}
+
+/* ==== Main ==== */
+.dashboard-main {
+  display: grid;
+  gap: 1rem;
+}
+
+.search-bar {
+  inline-size: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-block: 0.5rem;
+  padding-inline: 1rem 0.5rem;
+  background-color: var(--clr-bg-card);
+  border-radius: var(--br-card);
+}
+
+.search-bar__icon {
+  flex-shrink: 0;
+  color: var(--clr-accent);
+  font-size: 1.2rem;
+}
+
+/* ==== Search input ==== */
+.search-bar__input {
+  flex-grow: 1;
+  min-inline-size: 0;
+  color: var(--clr-text-primary);
+}
+
+.search-bar__input::placeholder {
+  color: var(--clr-text-secondary);
+  opacity: 0.8;
+}
+
+.search-bar__input:focus-visible {
+  outline: none;
+}
+
+/* ==== Search-btn ==== */
+.search-bar__btn {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-block: 0.8rem;
+  padding-inline: 0.6rem;
+
+  color: #ffffff;
+  font-weight: var(--fw-bold);
+
+  background-color: var(--clr-accent);
+
+  border-radius: var(--br-card);
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.search-bar__btn:hover,
+.search-bar__btn:focus-visible {
+  outline: none;
+  background-color: var(--clr-accent-hover);
+}
+
+/* ==== section ==== */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background-color: var(--clr-bg-card);
+  border-radius: var(--br-card);
+  padding: 1rem;
+}
+
+.profile-card__header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-card__avatar-wrapper {
+  inline-size: 4rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profile-card__avatar-wrapper svg {
+  inline-size: 100%;
+  block-size: 100%;
+  fill: var(--clr-text-secondary);
+}
+
+.profile-card__name {
+  font-size: 1.1rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-text-primary);
+  line-height: 1.2;
+}
+
+.profile-card__handle {
+  font-size: 0.85rem;
+  color: var(--clr-accent);
+  /* Bright blue accent color */
+  margin-block-start: 2px;
+}
+
+.profile-card__joined {
+  font-size: 0.8rem;
+  color: var(--clr-text-secondary);
+  margin-block-start: 4px;
+}
+
+/* ==== Bio ==== */
+.profile-card__bio-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--clr-text-secondary);
+}
+
+/* ==== Profile card User Stats ==== */
+.profile-card__user-stats {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--clr-bg-stats);
+  border-radius: var(--br-card);
+  gap: 0.5rem;
+  padding: 0.8rem;
+}
+
+.profile-card__stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-card__stat-label {
+  font-size: 0.7rem;
+  color: var(--clr-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.profile-card__stat-value {
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-text-primary);
+  margin-block-start: 4px;
+  /* Creates spacing below the label */
+}
+
+
+/* ==== Social Links ==== */
+.profile-card__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-block-start: 0.5rem;
+}
+
+.profile-card__link-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--clr-text-secondary);
+}
+
+.profile-card__link-icon {
+  inline-size: 20px;
+  /* Locks icon width so text aligns vertically */
+  text-align: center;
+  color: var(--clr-text-secondary);
+}
+
+/* ==== Attribution ==== */
+.attribution {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  justify-content: space-between;
+}
+
+.attribution__author-github {
+  font-size: 1.2rem;
+}

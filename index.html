@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | GitHub Profile Finder</title>
+
+  <!-- Google Font: Space Mono (Weights: 400, 700) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Local Stylesheet & Script (Deferred) -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+  <!-- Layout Wrapper -->
+  <div class="dashboard-wrapper">
+
+    <!-- ========================================== -->
+    <!-- Header -->
+    <!-- ========================================== -->
+    <header class="dashboard-header">
+
+      <h1 class="dashboard-logo"> &lt; devfinder &gt; </h1>
+
+      <button id="toggle-theme-btn" class="theme-toggle-btn" aria-label="Toggle theme">
+        <span id="theme-btn-text">light</span>
+        <i id="theme-btn-icon" class="fa-solid fa-sun"></i>
+      </button>
+
+
+    </header>
+
+    <!-- ========================================== -->
+    <!-- Main -->
+    <!-- ========================================== -->
+    <main class="dashboard-main">
+
+      <form id="search-form" class="search-bar" novalidate>
+
+        <i class="fa-solid fa-magnifying-glass search-bar__icon"></i>
+
+        <input type="text" id="search-input" class="search-bar__input" placeholder="Github username..." required
+          autocomplete="off" aria-label="Search GitHub username">
+
+        <button type="submit" class="search-bar__btn">Search</button>
+
+      </form>
+
+
+      <section id="profile-card" class="profile-card" aria-label="Github User Profile">
+        <!-- ==== card Header ====  -->
+        <header class="profile-card__header">
+
+          <!-- ==== Profile-Avatar ==== -->
+          <div class="profile-card__avatar-wrapper">
+            <!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com 
+            License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2 35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z" />
+            </svg>
+          </div>
+
+          <!-- ==== Profile Identity ====  -->
+          <div class="profile-card__identity">
+            <h2 class="profile-card__name">The Octocat</h2>
+            <p class="profile-card__handle">@octocat</p>
+            <p class="profile-card__joined">Joined 25 Jan 2011</p>
+          </div>
+
+        </header>
+
+
+        <!-- ==== Profile Bio ====  -->
+        <p class="profile-card__bio-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui sunt cupiditate
+          magnam earum dolorum quas ea! Et mollitia quas esse.</p>
+
+        <!-- ==== Profile Stats ====  -->
+        <dl class="profile-card__user-stats">
+
+          <!-- Repos -->
+          <div class="profile-card__stat-item">
+            <dt class="profile-card__stat-label">Repos</dt>
+            <dd class="profile-card__stat-value">8</dd>
+          </div>
+
+          <!-- Followers -->
+          <div class="profile-card__stat-item">
+            <dt class="profile-card__stat-label">Followers</dt>
+            <dd class="profile-card__stat-value">3938</dd>
+          </div>
+
+          <!-- Following -->
+          <div class="profile-card__stat-item">
+            <dt class="profile-card__stat-label">Following</dt>
+            <dd class="profile-card__stat-value">9</dd>
+          </div>
+
+        </dl>
+
+        <!-- ==== Profile-Social-Links ==== -->
+
+        <ul class="profile-card__links">
+
+          <li class="profile-card__link-item">
+            <i class="fa-solid fa-location-dot profile-card__link-icon"></i>
+            <span class="profile-card__link-text">Location</span>
+          </li>
+
+          <li class="profile-card__link-item">
+            <i class="fa-solid fa-link profile-card__link-icon"></i>
+            <span class="profile-card__link-text">Blog/Website Link</span>
+          </li>
+
+          <li class="profile-card__link-item">
+            <i class="fa-brands fa-twitter profile-card__link-icon"></i>
+            <span class="profile-card__link-text">Twitter</span>
+          </li>
+
+          <li class="profile-card__link-item">
+            <i class="fa-solid fa-building profile-card__link-icon"></i>
+            <span class="profile-card__link-text">Company</span>
+          </li>
+
+        </ul>
+
+      </section>
+
+    </main>
+
+
+    <!-- ========================================== -->
+    <!-- footer -->
+    <!-- ========================================== -->
+    <footer class="attribution">
+      <p class="attribution__copyright">
+        &copy; <a href="https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6" target="_blank"
+          rel="noopener">frontendmentor 2026</a>
+      </p>
+      <p class="attribution__author">
+
+        <a href="https://github.com/CodeWithVinayakKamble" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github attribution__author-github"></i>
+          VK
+        </a>
+      </p>
+    </footer>
+  </div>
+
+</body>
+
+</html>
