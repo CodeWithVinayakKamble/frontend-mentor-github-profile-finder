@@ -134,6 +134,10 @@ body {
 /* ==== Layout Setting ==== */
 .dashboard-wrapper {
   display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
   grid-template-rows: auto 1fr auto;
   gap: 1rem;
 
@@ -144,6 +148,7 @@ body {
 
 /* ==== Header ==== */
 .dashboard-header {
+  grid-area: header;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -183,6 +188,8 @@ body {
 
 /* ==== Main ==== */
 .dashboard-main {
+  grid-area: main;
+
   display: grid;
   gap: 1rem;
 }
@@ -361,6 +368,7 @@ body {
 
 /* ==== Attribution ==== */
 .attribution {
+  grid-area: footer;
   display: flex;
   align-items: center;
   font-size: 0.8rem;
