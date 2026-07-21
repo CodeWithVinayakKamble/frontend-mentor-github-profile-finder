@@ -63,9 +63,6 @@ const updateSocialLink = (elementId, dataValue) => {
     }
 }
 
-
-
-
 // ========================================== //
 // Core Action Functions
 // ========================================== //
