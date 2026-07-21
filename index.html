@@ -61,7 +61,7 @@
         <input type="text" id="search-input" class="search-bar__input" placeholder="Github username..." required
           autocomplete="off" aria-label="Search GitHub username">
 
-        <button type="submit" class="search-bar__btn">Search</button>
+        <button type="submit" id="submitForm" class="search-bar__btn">Search</button>
 
       </form>
 
@@ -81,7 +81,7 @@
           </div>
 
           <!-- ==== Profile Identity ====  -->
-          <div class="profile-card__identity">
+          <div id="identity" class="profile-card__identity">
             <h2 class="profile-card__name">The Octocat</h2>
             <p class="profile-card__handle">@octocat</p>
             <p class="profile-card__joined">Joined 25 Jan 2011</p>
@@ -100,19 +100,19 @@
           <!-- Repos -->
           <div class="profile-card__stat-item">
             <dt class="profile-card__stat-label">Repos</dt>
-            <dd class="profile-card__stat-value">8</dd>
+            <dd class="profile-card__stat-value" id="repos">8</dd>
           </div>
 
           <!-- Followers -->
           <div class="profile-card__stat-item">
             <dt class="profile-card__stat-label">Followers</dt>
-            <dd class="profile-card__stat-value">3938</dd>
+            <dd class="profile-card__stat-value" id="followers">3938</dd>
           </div>
 
           <!-- Following -->
           <div class="profile-card__stat-item">
             <dt class="profile-card__stat-label">Following</dt>
-            <dd class="profile-card__stat-value">9</dd>
+            <dd class="profile-card__stat-value" id="following">9</dd>
           </div>
 
         </dl>
@@ -123,22 +123,22 @@
 
           <li class="profile-card__link-item">
             <i class="fa-solid fa-location-dot profile-card__link-icon"></i>
-            <span class="profile-card__link-text">Location</span>
+            <span class="profile-card__link-text" id="location">Location</span>
           </li>
 
           <li class="profile-card__link-item">
             <i class="fa-solid fa-link profile-card__link-icon"></i>
-            <span class="profile-card__link-text">Blog/Website Link</span>
+            <span class="profile-card__link-text" id="blog">Blog/Website Link</span>
           </li>
 
           <li class="profile-card__link-item">
             <i class="fa-brands fa-twitter profile-card__link-icon"></i>
-            <span class="profile-card__link-text">Twitter</span>
+            <span class="profile-card__link-text" id="twitter">Twitter</span>
           </li>
 
           <li class="profile-card__link-item">
             <i class="fa-solid fa-building profile-card__link-icon"></i>
-            <span class="profile-card__link-text">Company</span>
+            <span class="profile-card__link-text" id="company">Company</span>
           </li>
 
         </ul>

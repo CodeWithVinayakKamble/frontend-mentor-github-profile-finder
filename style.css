@@ -395,9 +395,6 @@ body,
 }
 
 
-
-
-
 /* ==========================================================================
    Dashboard-footer
    ==========================================================================
@@ -414,7 +411,8 @@ body,
 
 .attribution {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
 
@@ -426,4 +424,36 @@ body,
 
 .attribution>*:hover {
   color: var(--clr-text-primary);
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ==========================================================================
+*/
+
+@media screen and (min-width:768px) {
+  .dashboard-wrapper {
+    inline-size: min(100%, 573px);
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .profile-card {
+    gap: 1.5rem;
+    padding: 2.5rem;
+  }
+
+  .profile-card__user-stats {
+    justify-content: space-evenly;
+  }
+
+  .profile-card__stat-item {
+    align-items: flex-start;
+  }
+
+  .profile-card__links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
